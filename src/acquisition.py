@@ -51,5 +51,4 @@ plt.ylabel("amplitude")
 plt.grid(alpha=0.3)
 plt.show()
 
-print(f"Result:{len(project.raw_1d_signal)} rready for 2D folding")
-
+print(f"Result:{len(project.raw_1d_signal)} ready for 2D folding")
