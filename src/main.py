@@ -9,3 +9,7 @@ preprocess(project)
 from reconstruction import reconstruct
 
 reconstruct(project)
+
+from segmentation import segment
+
+segment(project)
