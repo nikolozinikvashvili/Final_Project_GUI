@@ -13,3 +13,7 @@ reconstruct(project)
 from segmentation import segment
 
 segment(project)
+
+from statistics import analyze_statistics
+
+analyze_statistics(project)
