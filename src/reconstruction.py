@@ -29,17 +29,17 @@ def reconstruct(project):
     # to perform inverse 2D Fourier transform, bringing the filtered frequency domain data back into 2D domain
     project.reconstructed_cmb = np.abs(fft.ifft2(filtered_fft))
 
-    # Final 2D field after low pass and inverse Fourier transform
-    plt.figure(figsize=(8, 8))
-    plt.imshow(project.reconstructed_cmb, cmap='gray')
-    plt.title("Reconstructed CMB Candidate Field", fontsize=14)
-    plt.axis('off')
-    plt.show()
+    # Final 2D field after low-pass filtering and inverse Fourier transform
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8))
 
-    plt.figure(figsize=(7, 7))
-    plt.imshow(project.reconstructed_cmb, cmap='viridis')
-    plt.title("Distilled Isotropic Background (Candidate CMB)", fontsize=14)
-    plt.axis('off')
+    ax1.imshow(project.reconstructed_cmb, cmap='gray')
+    ax1.set_title("Reconstructed CMB Candidate Field", fontsize=14)
+    ax1.axis('off')
+
+    ax2.imshow(project.reconstructed_cmb, cmap='viridis')
+    ax2.set_title("Reconstructed Candidate Field Viridis", fontsize=14)
+    ax2.axis('off')
+
     plt.show()
 
 
