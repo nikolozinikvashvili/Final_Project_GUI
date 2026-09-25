@@ -16,8 +16,13 @@ def reconstruct(project):
     # np.log1p by applying logarithmic scaling we can see weak and strong frequencies together
     ax1.imshow(np.log1p(np.abs(project.fft_shifted)), cmap='gray')
     ax1.set_title("2D Fourier Spectrum")
+    ax1.axis('off')
+
     ax2.imshow(project.mask, cmap='gray')
     ax2.set_title("circular Low_Pass mask")
+    ax2.axis('off')
+
+    plt.tight_layout()
     plt.show()
 
     # keeps low spatial frequencies inside the radius 12 circle and removes the outlayer
@@ -40,6 +45,7 @@ def reconstruct(project):
     ax2.set_title("Reconstructed Candidate Field Viridis", fontsize=14)
     ax2.axis('off')
 
+    plt.tight_layout()
     plt.show()
 
 
